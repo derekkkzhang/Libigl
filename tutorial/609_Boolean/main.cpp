@@ -422,7 +422,7 @@ int main(int argc, char *argv[])
 
     igl::read_triangle_mesh("C:/Users/Derek Zhang/Desktop/WAAM Research/CAD/Cube.STL", v1, f1);
     igl::read_triangle_mesh("C:/Users/Derek Zhang/Desktop/WAAM Research/CAD/zero_ball.STL", v2, f2);
-    v2 = move_mesh(v2, 0, 0, 60);
+
     Matrix<double, Dynamic, 1> d;
     Matrix<int, Dynamic, 1> I;
     Matrix<double, Dynamic, 3> C;
@@ -437,8 +437,12 @@ int main(int argc, char *argv[])
       //   I  #P list of facet indices corresponding to smallest distances
       //   C  #P by 3 list of closest points
     igl::point_mesh_squared_distance(v2, v1, f1, d, I, C);
-    cout << "distance: " << endl;
-    for (auto ele : d) cout << ele << endl;
+    
+    double min_squared_distance = INT_MAX;
+    for (auto ele : d) {
+        min_squared_distance = min(ele, min_squared_distance);
+    }
+    cout << "Minimum squared distance between meshes: " << min_squared_distance << endl;
 
 
     /*igl::opengl::glfw::Viewer viewer;
