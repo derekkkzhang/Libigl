@@ -26,7 +26,7 @@ computational geometry.
 
 ## Run CMake
 1. Go to the folder that you want to build Libigl project (e.g. C:\WAAM\Software) and type **cmd** in the address bar.\
-2. Then clone this Github repo to your local folder by entering: **git clone https:// <span></span> github.com/derekkkzhang/Libigl.git**
+2. Then clone this Github repo to your local folder by entering: **git clone https:// <span></span> github.com/derekkkzhang/WAAM_Modelling.git**
 3. Enter the follwing commands for the initial build: \
 mkdir build\
 cd build\
